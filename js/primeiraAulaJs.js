@@ -12,6 +12,8 @@ function calculadora(num1,num2,operacao){
     num1 = parseInt(num1) //captura somente o numero inteiro
     num2 = parseInt(num2);
 
+    //utilizar ifs nesse formato é uma pessima pratica só fiz por que é um codigo simples
+
     if(operacao.includes('som')) return num1+num2; //resultado soma
     if(operacao.includes('sub')) return num1-num2; // resultado subtração
     if(operacao.includes('div')) return operacao.includes('div') ? (num2 != 0 ? Math.floor(num1/num2) : 'Não da pra dividir por zero') : null; // operação ternaria para verificar se o usuario digitou 0 no segundo numero
