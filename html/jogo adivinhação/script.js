@@ -1,7 +1,8 @@
-const numeroCerto = Math.floor(Math.random() * 100) + 1; // Inicializa o número aleatório
+let numeroCerto = Math.floor(Math.random() * 100) + 1; // Inicializa o número aleatório
 let tentativas = 0; // Inicializa as tentativas do usuário
 let tentativaAnterior; // Inicializa a tentativa anterior para ajudar o usuário
 let historicoTentativas = []; // Inicializa o histórico de tentativas
+let acertou = false;
 
 function chute(chuteUsuario) {
     const regexNumeros = /\d+/g; // Regex para capturar apenas números
@@ -11,6 +12,15 @@ function chute(chuteUsuario) {
     if (!chuteUsuarioStr) { // Verifica se o input do usuário está vazio
         exibirMensagem("Digite algum número", "yellow");
         return;
+    }
+
+    if(acertou){
+        exibirMensagem("Você já acertou o número! Irei gerar outro.", "green");
+        numeroCerto = Math.floor(Math.random() * 100) + 1; // gerar outro numero
+        tentativas = 0; // resetar as tentivas
+        acertou = false; // definir que ainda não acertou para evitar travar nesse if quando o usuario clicar novamente
+        historicoTentativas = [] // resetar o historico
+        return
     }
 
     if (regexLetras.test(chuteUsuarioStr)) { // Verifica se o input contém letras
@@ -50,6 +60,8 @@ function chute(chuteUsuario) {
         historicoTentativas.push(chuteUsuario);
         exibirMensagem("Chute muito alto!", "red");
     } else {
+        tentativaAnterior = chuteUsuario;
+        acertou = true;
         exibirMensagem("Parabéns, você acertou!", "green");
         document.getElementById("tentativas").innerHTML = `Acertou em ${tentativas}`;
         return; // Retorna para não mostrar a quantidade de tentativas e manter o texto de acertou em {tentativas}
