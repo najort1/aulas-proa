@@ -54,7 +54,7 @@ function chute(chuteUsuario) {
         document.getElementById("tentativas").innerHTML = `Acertou em ${tentativas}`;
         return; // Retorna para não mostrar a quantidade de tentativas e manter o texto de acertou em {tentativas}
     }
-    document.getElementById("tentativas").innerHTML = `Você fez ${tentativas} tentativas`;
+    document.getElementById("tentativas").innerHTML = `Você fez ${tentativas} tentativas`; //informar a quantidade de tentativas pro usuario
 }
 
 function exibirMensagem(mensagem, cor) { //função para evitar repitação de codigos no if

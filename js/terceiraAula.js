@@ -62,3 +62,5 @@ function verificaAlunoAprovado(notas){
 
 
 }
+
+console.log(verificaAlunoAprovado([7,7,7,7]))
