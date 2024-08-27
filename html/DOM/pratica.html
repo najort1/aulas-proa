@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags são informações sobre a página que não são exibidas diretamente ao usuário -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica DOM</title>
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Div principal que contém todas as funções relacionadas ao DOM -->
+    <div class="funcoesDOM">
+        
+        <!-- Seção para demonstrar o método appendChild -->
+        <div class="appendChildClass">
+            <!-- Div que contém os botões de opções -->
+            <div class="botoesOpcoes">
+                <!-- Botão que chama a função aprendeChild ao ser clicado -->
+                <button class="botaoFuncoesAppendChild" type="button" onclick="aprendeChild()">Clique aqui para ver o método appendChild</button>
+                <!-- Botão que chama a função limparChild ao ser clicado -->
+                <button class="limparAppendChild" onclick="limparChild()">Limpar</button>
+            </div>
+            <!-- Div que contém o texto informativo -->
+            <div class="textoInforma">
+                <!-- Parágrafo onde o texto será inserido pelo método appendChild -->
+                <p class="textoInformandoAppendChild"></p>
+            </div>
+        </div>
+
+        <!-- Seção para demonstrar o método querySelectorAll -->
+        <div class="querySelectorAllClass">
+            <!-- Div que contém os botões de opções -->
+            <div class="botoesOpcoes">
+                <!-- Botão que chama a função aprendequerySelectorAll ao ser clicado -->
+                <button class="botaoFuncoesAppendChild" type="button" onclick="aprendequerySelectorAll()">Clique aqui para ver o método querySelectorAll</button>
+            </div>
+            <!-- Div que contém o texto informativo -->
+            <div class="textoInforma">
+                <!-- Parágrafos que mudam de cor ao clicar no botão -->
+                <p class="textoInformandoQuery">Olá clique no botão e mude minha cor :)</p>
+                <p class="textoInformandoQuery">Olá clique no botão e mude minha cor :)</p>
+                <p class="textoInformandoQuery">Olá clique no botão e mude minha cor :)</p>
+            </div>
+        </div>
+
+        <!-- Seção para demonstrar o método replaceChild -->
+        <div class="replaceChildClass">
+            <!-- Div que contém os botões de opções -->
+            <div class="botoesOpcoes">
+                <!-- Botão que chama a função aprenderreplaceChild ao ser clicado -->
+                <button class="botaoFuncoesAppendChild" type="button" onclick="aprendereplaceChild()">Clique aqui para ver o método replaceChild</button>
+            </div>
+            <!-- Div que contém o texto informativo -->
+            <div class="textoInforma">
+                <!-- Parágrafo onde o texto será substituído pelo método replaceChild -->
+                <p class="textoInformandoReplaceChild">Olá clique no botão e mude meu texto :)</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

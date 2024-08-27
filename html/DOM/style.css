@@ -1,0 +1,105 @@
+.oque_E_Dom{
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    width: 20%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 30px;
+}
+
+.ClassTextoInforma{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 1.3em;
+}
+
+p{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+body {
+    background-color: #000000;
+    font-family: monospace;
+}
+
+.tituloDaFuncao{
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+}
+
+.funcoesDOM {
+    display: flex;
+    margin-top: 2em;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    color: white;
+    max-height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.appendChildClass,
+.querySelectorAllClass,
+.replaceChildClass
+{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+    height: 30em;
+    overflow: scroll;
+}
+
+.botoesOpcoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Media query para telas com largura máxima de 600px (dispositivos móveis) */
+@media screen and (max-width: 600px) {
+    /* Define a direção dos itens dentro do contêiner .funcoesDOM para coluna (vertical) */
+    .funcoesDOM {
+        flex-direction: column;
+    }
+
+    /* Define a largura dos elementos com as classes .appendChildClass e .querySelectorAllClass para 90% da largura do contêiner */
+    .appendChildClass,
+    .querySelectorAllClass {
+        width: 90%;
+    }
+
+    /* Define a largura do elemento com a classe .oque_E_Dom para 90% da largura do contêiner */
+    .oque_E_Dom {
+        width: 90%;
+        /* Remove a borda do elemento */
+        border: none;
+        /* Remove o arredondamento dos cantos do elemento */
+        border-radius: 0;
+        /* Remove a sombra do elemento */
+        box-shadow: none;
+    }
+}
