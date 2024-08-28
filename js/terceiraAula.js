@@ -1,6 +1,6 @@
 function calculadora(num1,num2,operacao){
     
-    if(typeof(num1) !== 'number' && typeof(num2) !== 'number') return 'O input é obrigatorio ser somente numeros ! ' //verificar se o input é realmente numeros
+    if(typeof(num1) !== 'number' || typeof(num2) !== 'number') return 'O input é obrigatorio ser somente numeros ! ' //verificar se o input é realmente numeros
 
     num1 = parseInt(num1) //captura somente numeros inteiro
     num2 = parseInt(num2); //captura somente numeros inteiro
