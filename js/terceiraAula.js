@@ -2,14 +2,14 @@ function calculadora(num1,num2,operacao){
     
     if(typeof(num1) !== 'number' || typeof(num2) !== 'number') return 'O input é obrigatorio ser somente numeros ! ' //verificar se o input é realmente numeros
 
-    num1 = parseInt(num1) //captura somente numeros inteiro
-    num2 = parseInt(num2); //captura somente numeros inteiro
+    num1 = parseFloat(num1) //captura somente numeros inteiro
+    num2 = parseFloat(num2); //captura somente numeros inteiro
 
     //utilizar ifs nesse formato é uma pessima pratica só fiz por que é um codigo simples
 
     if(operacao.includes('som')) return num1+num2; //resultado soma
     if(operacao.includes('sub')) return num1-num2; // resultado subtração
-    if(operacao.includes('div')) return operacao.includes('div') ? (num2 != 0 ? Math.floor(num1/num2) : 'Não da pra dividir por zero') : null; // operação ternaria para verificar se o usuario digitou 0 no segundo numero
+    if(operacao.includes('div')) return operacao.includes('div') ? (num2 !== 0 ? Math.floor(num1/num2) : 'Não da pra dividir por zero') : null; // operação ternaria para verificar se o usuario digitou 0 no segundo numero
     if(operacao.includes('mul')) return num1*num2; //resultado multiplicação
     if(operacao.includes('expo')) return num1**num2; //resultado exponenciação
 
