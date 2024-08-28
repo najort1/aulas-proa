@@ -19,6 +19,9 @@ function calculadora(num1,num2,operacao){
 
 function validaNumeroPrimo(numero) {
   // Verifica se o numero é menor ou igual a 1
+
+  if(typeof(numero) !== 'number') return 'O input é obrigatorio ser um numero ! ' //verificar se o input é realmente numeros
+
   if (numero <= 1) return false;
 
   // Loop para verificar se o numero é divisivel por algum numero entre 2 e o proprio numero - 1
