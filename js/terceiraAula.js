@@ -38,11 +38,22 @@ function validaNumeroPrimo(numero) {
 function contadorDeCaracterEspecial(string){
   let cont = 0; //contaodr zerado pra contar quantas ocorrencias aparecem
   const caracteres = ['@',"#","$","%","&"] //array de caracteres especiais
+  
+  const contadorEspecifico = {
+    '@':0,
+    '#':0,
+    '$':0,
+    '%':0,
+    '&':0
+  } // objeto para contar quantas vezes cada caracter aparece
+
   for(let letra of string){ //verificar cada letra da string
     if(caracteres.includes(letra)){ //se algum elemento do array de caracteres incluir a letra da string aumentar o contador
       cont++; // aumenta o contador
+      contadorEspecifico[letra]++; //aumenta o contador especifico
       }
   }
+  console.log(contadorEspecifico) //mostra quantas vezes cada caracter apareceu
   return cont; // retorna o contador após o fim do loop
 }
 
@@ -66,4 +77,4 @@ function verificaAlunoAprovado(notas){
 
 }
 
-console.log(verificaAlunoAprovado([7,7,7,7]))
+console.log(contadorDeCaracterEspecial("dasfsad124713615521638712%!@%!¨#¨!*"))
