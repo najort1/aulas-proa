@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form>
+        <div class="containerTudo">
+            <div class="containerLogin">
+                <div class="titulo">
+                    <h1>Logar</h1>
+                </div>
+                <div class="inputsUsuario">
+                    <label for="emailUsuario">Digite seu email</label>
+                    <input type="text" id="emailUsuario" placeholder="E-mail">
+                    <br>
+                    <label for="senhaUsuario">Digite sua senha</label>
+                    <input type="password" id="senhaUsuario" placeholder="Senha">
+                    <br>
+                </div>
+
+                <div class="botaoLogar">
+                    <button type="button" onclick="validaForm()">Logar</button>
+                    <a href="cadastro.html"><button type="button">Cadastrar</button></a>
+
+                </div>
+                <div class="resultado">
+                    <h1 id="resultadoLogin"></h1>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+
+    <form>
+        <div class="containerTudo">
+            <div class="containerRegistro">
+                <div class="titulo">
+                    <h1>Registrar</h1>
+                </div>
+                <div class="inputsUsuario">
+                    <label for="email">Digite seu email</label>
+                    <input type="text" name="email" id="CadEmailUsuario" placeholder="Email cadastrar">
+                    <br>
+                    <label for="senha">Digite seu senha</label>
+                    <input type="password" name="senha" id="cadSenhaUsuario" placeholder="Senha de acesso">
+                    <br>
+                </div>
+
+                <div class="botoesCadastro">
+                    <br>
+                    <button type="button" id="cadBotao" onclick="cadastraUsuario()">Enviar</button>
+                    <p>Já possui cadastro ? <a href="index.html">Faça login</a></p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
