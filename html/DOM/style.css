@@ -103,3 +103,25 @@ body {
         box-shadow: none;
     }
 }
+
+/* Media query para ipad */
+@media screen and (max-width: 768px) {
+
+    .funcoesDOM {
+        flex-direction: column;
+    }
+
+    .appendChildClass,
+    .querySelectorAllClass {
+        width: 90%;
+    }
+
+    .oque_E_Dom {
+        width: 90%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+
+}
