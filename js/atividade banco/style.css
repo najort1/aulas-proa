@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    transition: all 0.3s;
+  }
+  
+  body {
+    background-color: rgb(36, 34, 33);
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/fundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.5) blur(2px);
+    z-index: -1;
+  }
+  
+  .headerPagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    height: 60px;
+  }
+  
+  .informacoesUsuario {
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .informacoesUsuario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .titulo {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titulo h1 {
+    margin-left: 10px;
+  }
+  
+  .titulo img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    filter: brightness(2);
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .funcoes {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+  }
+  
+  .mostraSaldo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .deposito,
+  .saque,
+  .transferir {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+  
+  .resultadoApi {
+    padding: 0.8em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mostraSaldo img {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+  }
+  
+  .resultado {
+    color: white;
+    text-align: center;
+    align-self: center;
+    padding: 0.8em;
+    margin-top: 2em;
+    width: 20em;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #000000;
+    font-family: monospace;
+    text-align: left;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+  
+  th {
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  th, td {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  button:active {
+    background-color: black;
+    color: white;
+  }
+  
+  input {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  input:focus {
+    border: 2px solid black;
+  }
+  
+  /* Estilos para o modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40em;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .modal::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.modal::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Cor do track da barra de rolagem */
+    border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do thumb da barra de rolagem */
+    border-radius: 10px;
+    border: 3px solid transparent; /* Espaço ao redor do thumb */
+    background-clip: content-box;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor ao passar o mouse */
+}
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    color: black;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .extratoConteudo {
+    color: black;
+  }
+  
+  .modal-content h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para o botão "Ver Extrato" */
+  #btnExtrato {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  #btnExtrato:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 600px), (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .extrato {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+      max-height: 200px;
+    }
+    .funcoes {
+      margin-top: 10px;
+      padding: 5px;
+    }
+    .resultadoApi,
+    .resultado {
+      width: 100%;
+      padding: 5px;
+    }
+    .mostraSaldo {
+      flex-direction: column;
+    }
+    .mostraSaldo img,
+    .titulo img,
+    .informacoesUsuario img {
+      width: 30px;
+      height: 30px;
+    }
+    .headerPagina {
+      height: 50px;
+    }
+    button,
+    input {
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .titulo h1 {
+      font-size: 1.2em;
+    }
+  }
+  

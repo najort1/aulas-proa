@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Banco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="headerPagina">
+        <div class="titulo">
+            <img src="./images/logo.png" alt="">
+            <h1>Chupetão bank</h1>
+        </div>
+        <div class="informacoesUsuario">
+            <span class="nome"></span>
+            <img src="./images/Sem título.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="funcoes">
+            <div class="mostraSaldo">
+                <h1 class="saldo"></h1>
+                <img src="./images/Chupeta.png" alt="" class="saldo">
+            </div>
+
+            <div class="deposito">
+                <button type="button" onclick="processaEscolha(1)">Depositar</button>
+                <div class="resultadoApi">
+                    <input type="hidden" name="senhaDeposito" placeholder="Senha autenticação" class="senhaDeposito">
+                    <input type="hidden" name="valorDeposito" placeholder="Valor de deposito" class="valorDeposito">
+                    <button type="button" style="display: none" class="confirmarButtonDeposito">Confirmar</button>
+                </div>
+            </div>
+
+            <div class="saque">
+                <button type="button" onclick="processaEscolha(2)">Sacar</button>
+                <div class="resultadoApi">
+                    <input type="hidden" name="valorTransferencia" placeholder="Senha autenticação" class="senhaSaque">
+                    <input type="hidden" name="SenhaAutentica" placeholder="Valor do saque" class="valorSaque">
+                    <button type="button" style="display: none" class="confirmarButtonSaque">Confirmar</button>
+                </div>
+            </div>
+
+            <div class="transferir">
+                <button type="button" onclick="processaEscolha(3)">Transferir</button>
+                <div class="resultadoApi">
+                    <input type="hidden" name="SenhaAutentica" placeholder="Senha autenticação" class="senhaTrans">
+                    <input type="hidden" name="valorTransferencia" placeholder="Valor da transferencia" class="valorTrans">
+                    <input type="hidden" name="contaDestino" placeholder="Conta destino" class="contaDestinoTrans">
+                    <button type="button" style="display: none" class="confirmarButtonTrans">Confirmar</button>
+                </div>
+            </div>
+
+            <!-- Botão para abrir o modal -->
+            <button type="button" id="btnExtrato">Ver Extrato</button>
+
+            <div id="modalExtrato" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Extrato</h2>
+                    <div class="extratoConteudo">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody class="extrato">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <h1 class="retorno"></h1>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
