@@ -7,7 +7,7 @@
     background-color: rgb(36, 34, 33);
     font-family: Arial, sans-serif;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
   
   body::before {
@@ -270,7 +270,7 @@
     color: black;
   }
   
-  /* Media Queries */
+
   @media (max-width: 600px), (max-width: 768px) {
     .container {
       flex-direction: column;
