@@ -364,17 +364,17 @@ function informarResultado(mensagem, tipo) {
   }
 }
 
-var modal = document.getElementById("modalExtrato");
+const modal = document.getElementById("modalExtrato");
 
-var btn = document.getElementById("btnExtrato");
+const botaoExtrato = document.getElementById("btnExtrato");
 
-var span = document.getElementsByClassName("close")[0];
+const botaoFechar = document.getElementsByClassName("close")[0];
 
-btn.onclick = function () {
+botaoExtrato.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
+botaoFechar.onclick = function () {
   modal.style.display = "none";
 };
 

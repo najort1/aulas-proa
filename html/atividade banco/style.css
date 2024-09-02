@@ -253,23 +253,7 @@
     color: black;
     margin-bottom: 30px;
   }
-  
-  /* Estilos para o botão "Ver Extrato" */
-  #btnExtrato {
-    background-color: #1a1a1a;
-    color: white;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  #btnExtrato:hover {
-    background-color: white;
-    color: black;
-  }
-  
+
 
   @media (max-width: 600px), (max-width: 768px) {
     .container {
