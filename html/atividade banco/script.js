@@ -110,7 +110,7 @@ function exibeSaldo() {
   const classSaldo = selectQuery(
     "body > div.container > div.funcoes > div.mostraSaldo > h1"
   );
-  classSaldo.innerHTML = `Chupetas: ${cliente.saldo}`;
+  classSaldo.innerHTML = `CHUPECOINS: ${cliente.saldo}`;
   return;
 }
 
@@ -161,7 +161,7 @@ function inicia() {
   );
 
   classNome.innerHTML = `Bem vindo, ${cliente.nome}!`;
-  classSaldo.innerHTML = `Chupetas: ${cliente.saldo}`;
+  classSaldo.innerHTML = `CHUPECOINS: ${cliente.saldo}`;
   formatarExtrato(extrato());
 }
 
