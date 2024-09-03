@@ -15,8 +15,9 @@ function capturaDataAtual() {
   const ano = data.getFullYear();
   const hora = data.getHours();
   const minuto = data.getMinutes();
+  const segundos = data.getSeconds();
 
-  return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
+  return `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundos}`;
 }
 
 function selectQuery(query) {
@@ -247,6 +248,11 @@ function criarInput(seletor, texto, tipo) {
     button.onclick = function () {
       const valor = parseInt(inputValor.value);
       const senha = inputSenha.value;
+
+      if(senha.length !== 4){
+        informarResultado("Senha deve ter 4 digitos", "erro");
+        return;
+      }
 
       if (senha == "3589") {
         console.log(`Depósito de R$ ${valor} na conta`);
