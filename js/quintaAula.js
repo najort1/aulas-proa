@@ -26,6 +26,14 @@ class ContaBancaria{
     }
 
 }
+
+
+const banco = new ContaBancaria(1000);
+banco.depositar(500);
+console.log(banco.getSaldo());
+banco.saldo = -1000;
+console.log(banco.getSaldo());
+
 console.log("--------------------------------------------------");
 class Animal {
 

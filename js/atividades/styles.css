@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    top: 0;
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(1.5em, 2.5vw, 2em);
+}
+
+#funcionarios {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.funcionario-card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.gifCarimbo iframe,
+.gifImpressoro button {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.clorisvadoGif img,
+.gifCarimbo button {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.gifImpressoro iframe,
+.clorisvadoGif button {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    h2{
+        font-size: 2em;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1.6em;
+        font-weight: bold;
+
+    }
+
+}
+
+/* celulares */
+@media (max-width: 768px) {
+
+    .funcionario-card {
+        width: 100%;
+    }
+
+    h2{
+        font-size: 1.5em;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    button {
+        margin-top: 50px;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    p {
+        margin-top: 50px;
+        font-size: 1.2em;
+        font-weight: bold;
+
+    }
+
+    .funcionario-card {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    h2{
+        font-size: 1.2em;
+    }
+
+    h1{
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: bold;
+
+    }
+
+    .funcionario-card {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 816px) {
+
+    #funcionarios {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        /* flex-wrap: wrap; */
+        gap: 20px;
+    }
+
+}

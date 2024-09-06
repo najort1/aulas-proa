@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Funcionários da Chupetão company</h1>
+    </header>
+    <section id="funcionarios">
+        <div class="funcionario-card">
+            <h2>CLORISVALDO PRODUTOR DE CLORO</h2>
+            <p id="info-clorisvaldo"></p>
+            <button onclick="mostrarInfo('clorisvaldo')">Mostrar Informações</button>
+            <button onclick="trabalhar('clorisvaldo')">Trabalhar</button>
+
+            <div class="clorisvadoGif">
+                <img src="https://img.quizur.com/f/img64624f77d49397.45271659.jpg?lastEdited=1684164477" alt="">
+                <button onclick="pararDeTrabalhar('clorisvaldo')">Parar de trabalhar</button>
+        </div>
+
+        </div>
+        
+        <div class="funcionario-card">
+            <h2>CARIMBO CARIMBADOR</h2>
+            <p id="info-carimbo"></p>
+            <button onclick="mostrarInfo('carimbo')">Mostrar Informações</button>
+            <button onclick="trabalhar('carimbo')">Trabalhar</button>
+
+            <div class="gifCarimbo">
+                <iframe src="https://giphy.com/embed/h3oKBn2omu2IukJOZQ" width="333" height="480" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+                <button onclick="pararDeTrabalhar('carimbo')">Parar de trabalhar</button>
+            </div>
+
+        </div>
+        
+        <div class="funcionario-card">
+            <h2>IMPRESSORO IMPRESSIONA AS GATAS</h2>
+            <p id="info-impressoro"></p>
+            <button onclick="mostrarInfo('impressoro')">Mostrar Informações</button>
+            <button onclick="trabalhar('impressoro')">Trabalhar</button>
+
+            <div class="gifImpressoro">
+                <iframe src="https://giphy.com/embed/5c2KuZKOGxx33lac4f" width="270" height="480" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+                <button onclick="pararDeTrabalhar('impressoro')">Parar de trabalhar</button>
+        </div>
+
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
