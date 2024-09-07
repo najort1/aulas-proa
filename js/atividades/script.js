@@ -56,7 +56,7 @@ class Designer extends Funcionario {
 }
 
 // Instâncias dos funcionários
-const funcionario = new Funcionario('CLORISVALDO', 25, 'PRODUTOR DE CLORO', 5000);
+const funcionario = new Funcionario('CACHORRO CHUPETÃO', Infinity, 'CHEFE', Infinity);
 const engenheiro = new Engenheiro('CARIMBO', 30, 'CARIMBADOR', 8000, 'Civil');
 const designer = new Designer('IMPRESSORO', 35, 'IMPRESSIONA AS GATAS', 6000, 'Photoshop');
 
