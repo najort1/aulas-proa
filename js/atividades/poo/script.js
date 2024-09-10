@@ -95,7 +95,7 @@ function trabalhar(funcionarioNome) {
         case 'carimbo':
             status = engenheiro.trabalhar();
             const gifCarimbo = document.querySelector('#funcionarios > div:nth-child(2) > div > iframe');
-            buttonParar = document.querySelector('#funcionarios > div:nth-child(2) > div > button');
+            buttonParar = document.querySelector('#funcionarios > div:nth-child(2) > div.gifCarimbo > button');
 
             gifCarimbo.style.display = 'block';
             buttonParar.style.display = 'block';
@@ -103,7 +103,7 @@ function trabalhar(funcionarioNome) {
         case 'impressoro':
             status = designer.trabalhar();
             const gifImpressoro = document.querySelector('#funcionarios > div:nth-child(3) > div > iframe');
-            buttonParar = document.querySelector('#funcionarios > div:nth-child(3) > div > button');
+            buttonParar = document.querySelector('#funcionarios > div:nth-child(3) > div.gifImpressoro > button');
 
             gifImpressoro.style.display = 'block';
             buttonParar.style.display = 'block';
@@ -138,4 +138,46 @@ function pararDeTrabalhar(funcionarioNome) {
             buttonParar.style.display = 'none';
             break;
     }
+}
+
+
+function mostraInptSalario(funcionarioNome){
+
+    switch(funcionarioNome){
+        case 'carimbo':
+            const inputCarimbo = document.querySelector('#funcionarios > div:nth-child(2) > div.alterarSalarioOptions > input');
+            const btnCarimbo = document.querySelector('#funcionarios > div:nth-child(2) > div.alterarSalarioOptions > button.alteraSalarioBtn');
+            inputCarimbo.style.display = 'block';
+            btnCarimbo.style.display = 'block';
+            break;
+        case 'impressoro':
+            const inputImpressoro = document.querySelector('#funcionarios > div:nth-child(3) > div.alterarSalarioOptions > input');
+            const btnImpressoro = document.querySelector('#funcionarios > div:nth-child(3) > div.alterarSalarioOptions > button.alteraSalarioBtn');
+            inputImpressoro.style.display = 'block';
+            btnImpressoro.style.display = 'block';
+            break;
+    }
+ 
+    return
+
+}
+
+
+function alterarSalario(funcionarioNome){
+    
+    switch(funcionarioNome){
+        case 'carimbo':
+            console.log('carimbo');
+            const inputCarimbo = document.querySelector('#funcionarios > div:nth-child(2) > div.alterarSalarioOptions > input');
+            engenheiro.salario = Number(inputCarimbo.value);
+            mostrarInfo('carimbo');
+            break;
+        case 'impressoro':
+            const inputImpressoro = document.querySelector('#funcionarios > div:nth-child(3) > div.alterarSalarioOptions > input');
+            designer.salario = Number(inputImpressoro.value);
+            mostrarInfo('impressoro');
+            break;
+    }
+    
+    
 }
