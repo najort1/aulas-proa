@@ -28,11 +28,10 @@ body{
     position: relative;
 }
 
-.slide img{
-    width: 600px;
-    height: 450px;
+.slide img {
+    width: 300px; /* Ajuste a largura conforme necessário */
+    height: 165px; /* Ajuste a altura conforme necessário */
 }
-
 .slide img:hover{
     border: 2px solid #ffffff;
     border-radius: 10px;
@@ -82,22 +81,22 @@ body{
     background-color: aqua;
 }
 
-#radio1:checked ~ .first{
+#radio1:checked ~ .slides {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first{
-    margin-left: -20%;
+#radio2:checked ~ .slides {
+    margin-left: calc(-100% * 1);
 }
 
-#radio3:checked ~ .first{
-    margin-left: -40%;
+#radio3:checked ~ .slides {
+    margin-left: calc(-100% * 2);
 }
 
-#radio4:checked ~ .first{
-    margin-left: -60%;
+#radio4:checked ~ .slides {
+    margin-left: calc(-100% * 3);
 }
 
-#radio5:checked ~ .first{
-    margin-left: -80%;
+#radio5:checked ~ .slides {
+    margin-left: calc(-100% * 4);
 }

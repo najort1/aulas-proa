@@ -1,0 +1,99 @@
+body, html {
+    background: #141414;
+    color: #fff;
+    cursor: default;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    font-size: 10px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.listaPerfis {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 10em;
+}
+ul {
+    display: flex;
+    cursor: default;
+    opacity: 1;
+    transition: opacity .4s ease-out;
+    align-content: center;
+    gap: 30px;
+    justify-content: space-between;
+    list-style: none;
+}
+h1{
+    color: #fff;
+    font-size: 3.5vw;
+    font-weight: unset;
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 84px;
+    min-width: 84px;
+    position: relative;
+    text-decoration: none;
+    width: 10vw;
+    opacity: 1;
+}
+img:hover {
+    border: 4px solid #fff;
+    transition: border-width 0.1s ease-out;
+  }
+
+.nomePerfil {
+    color: grey;
+    font-size: 1.3vw;
+    line-height: 1.2em;
+    margin: .6em 0;
+    max-width: 200px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    display: inline-block;
+    white-space: normal;
+}
+.gerenciarPefil {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    cursor: pointer;
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    height: 50px;
+    width: 300px;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
