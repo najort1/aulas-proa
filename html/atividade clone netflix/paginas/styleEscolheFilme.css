@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #141414;
+}
 
 .imagemPrincipal{
     width: 100%;
@@ -14,11 +17,12 @@ header {
     display: flex;
     width: 100%;
     background-color: transparent;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: inset -17px 20px 13px 9px rgba(0, 0, 0, 0.5);
+    background-color: #141414;
+    box-shadow: -20px 11px 14px 0px rgba(0, 0, 0, 0.5);
 }
 
 #logoNetflix {
@@ -34,6 +38,17 @@ ul{
     object-fit: fill;
     width: 100%;
     height: 100%;
+}
+
+.tituloPrinciapl {
+    color: #fff000;
+    font-weight: bold;
+    font-size: 4em;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .filmePrincipal{
@@ -59,4 +74,66 @@ ul a {
 ul a:hover {
     color: #666565;
     transition: 1s;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    padding: 20px 0;
+    gap: 15px;
+}
+
+.carrossel-item {
+    transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out;
+    flex: 0 0 200px; /* Tamanho inicial das imagens */
+    overflow: hidden;
+    position: relative;
+    transform-origin: bottom; /* Faz com que a imagem cresça para cima */
+}
+
+.carrossel-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de zoom ao passar o mouse */
+.carrossel-item:hover {
+    transition-delay: 0.5s; /* Define um atraso de 0.5s antes da ampliação */
+    flex: 0 0 400px; /* Aumenta o tamanho do contêiner após o atraso */
+}
+
+.carrossel-item:hover img {
+    transform: scale(1);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#prevBtn1,#prevBtn2 {
+    left: 0;
+}
+
+#nextBtn1,#nextBtn2 {
+    right: 0;
+}
+
+h2{
+    color: white;
+    margin-top: 50px;
 }

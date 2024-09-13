@@ -1,102 +1,69 @@
-body{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    height: 100vh;
 }
 
-.slider{
-    margin: 0 auto;
-    width: 800px;
-    height: 600px;
+.carrossel-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
     overflow: hidden;
 }
 
-.slides{
-    width: 400%;
-    height: 400px;
+.carrossel {
     display: flex;
+    transition: transform 0.4s ease-in-out;
+    padding: 20px 0;
+    gap: 15px; /* Espaçamento flexível entre as imagens */
 }
 
-.slide{
-    width: 20%;
-    transition: 2s;
+.carrossel-item {
+    transition: transform 0.3s ease-in-out, flex 0.3s ease-in-out;
+    flex: 0 0 200px; /* Tamanho inicial das imagens */
+    overflow: hidden;
     position: relative;
+    transform-origin: bottom; /* Faz com que a imagem cresça para cima */
 }
 
-.slide img {
-    width: 300px; /* Ajuste a largura conforme necessário */
-    height: 165px; /* Ajuste a altura conforme necessário */
-}
-.slide img:hover{
-    border: 2px solid #ffffff;
+.carrossel-item img {
+    width: 100%;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.slides input{
-    display: none;
+/* Efeito de zoom ao passar o mouse */
+.carrossel-item:hover {
+    transition-delay: 0.5s; /* Define um atraso de 0.5s antes da ampliação */
+    flex: 0 0 400px; /* Aumenta o tamanho do contêiner após o atraso */
 }
 
-.manual-navigation {
+/* Remover o zoom da imagem e apenas crescer o contêiner */
+.carrossel-item:hover img {
+    transform: scale(1); /* Mantém a escala normal da imagem */
+}
+
+.nav-btn {
     position: absolute;
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    margin-top: 6em;
-}
-
-.manual-btn{
-    border: 2px solid #ff0000;  
-    border-radius: 10px;
-    padding: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-    transition: 1s;
+    z-index: 100;
 }
 
-.manual-btn:not(:last-child){
-    margin-right: 20px;
+#prevBtn {
+    left: 0;
 }
 
-.manual-btn:hover{
-    background-color: rgb(255, 255, 255);
-}
-
-.btn-manual{
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 5px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.btn-manual:not(:last-child){
-    margin-right: 20px;
-}
-
-.btn-manual:hover{
-    background-color: aqua;
-}
-
-#radio1:checked ~ .slides {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .slides {
-    margin-left: calc(-100% * 1);
-}
-
-#radio3:checked ~ .slides {
-    margin-left: calc(-100% * 2);
-}
-
-#radio4:checked ~ .slides {
-    margin-left: calc(-100% * 3);
-}
-
-#radio5:checked ~ .slides {
-    margin-left: calc(-100% * 4);
+#nextBtn {
+    right: 0;
 }
