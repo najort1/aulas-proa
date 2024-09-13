@@ -137,3 +137,38 @@ h2{
     color: white;
     margin-top: 50px;
 }
+
+.assistirFilme {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 67%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    width: 12em;
+    height: 5em;
+}
+
+.assistirFilme:hover{
+    background-color: #DBD8D3;
+}
+
+.iconPlay {
+    width: 65px;
+    height: 60px;
+    margin-left: -22px;
+}
+.textoAssistir{
+    font-size: 1.4em;
+}
+
+.botaoPlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
