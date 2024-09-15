@@ -1,57 +1,57 @@
-// Função genérica para configurar carrossel
-const setupCarrossel = (prevBtnId, nextBtnId, carrosselId) => {
+const manipularCarrosel = (prevBtnId, nextBtnId, carrosselId) => {
     const carrossel = document.querySelector(carrosselId);
-    const carrosselItems = carrossel.querySelectorAll('.carrossel-item');
+    const itensCarrosel = carrossel.querySelectorAll('.carrossel-item');
     const prevBtn = document.getElementById(prevBtnId);
     const nextBtn = document.getElementById(nextBtnId);
     
-    let currentIndex = 0;
-    const itemWidth = carrosselItems[0].offsetWidth + 15; // Largura do item + gap
+    let indexAtual = 0;
 
-    // Duplicar o primeiro e último item para o efeito de "espelho"
-    const firstClone = carrosselItems[0].cloneNode(true);
-    const lastClone = carrosselItems[carrosselItems.length - 1].cloneNode(true);
+    // Duplicar o primeiro e último item
+    const primeiroItemClone = itensCarrosel[0].cloneNode(true);
+    const ultimoItemClone = itensCarrosel[itensCarrosel.length - 1].cloneNode(true);
 
-    carrossel.appendChild(firstClone);
-    carrossel.insertBefore(lastClone, carrosselItems[0]);
+    carrossel.appendChild(primeiroItemClone);
+    carrossel.insertBefore(ultimoItemClone, itensCarrosel[0]);
 
     const moveToIndex = (index) => {
+        // Calcula o deslocamento somando as larguras dos itens anteriores
+        let calculoDeslocamento = 0;
+        for (let i = 0; i < index; i++) {
+            calculoDeslocamento += itensCarrosel[i].offsetWidth + 15;  // Largura do item + gap
+        }
+    
         carrossel.style.transition = 'transform 0.8s ease-in-out';
-        carrossel.style.transform = `translateX(${-index * itemWidth}px)`;
-        currentIndex = index;
+        carrossel.style.transform = `translateX(-${calculoDeslocamento}px)`;
+    
+        indexAtual = index;
     };
+    
 
-    // Próximo item
     nextBtn.addEventListener('click', () => {
-        console.log(currentIndex)
+        console.log(indexAtual)
         
-        if (currentIndex > 10) {
-            carrossel.style.transition = 'none'; // Desativa a transição para o loop
-            currentIndex = 0;
+        if (indexAtual > 10) {
+            indexAtual = 0;
             carrossel.style.transform = `translateX(0px)`;
             setTimeout(() => {
-                moveToIndex(currentIndex + 1);
-            }, 20); // Pequeno delay para ativar o loop suavemente
+                moveToIndex(indexAtual + 1);
+            }, 20);
         } else {
-            moveToIndex(currentIndex + 1);
+            moveToIndex(indexAtual + 1);
         }
     });
 
-    // Item anterior
     prevBtn.addEventListener('click', () => {
-        console.log(currentIndex)
+        console.log(indexAtual)
 
-        if (currentIndex <= 0) {
+        if (indexAtual <= 0) {
             return;
         } else {
-            console.log(currentIndex + " - 1")
-            moveToIndex(currentIndex - 1);
+            console.log(indexAtual + " - 1")
+            moveToIndex(indexAtual - 1);
         }
     });
 };
 
-// Configurar o primeiro carrossel
-setupCarrossel('prevBtn1', 'nextBtn1', '#filmes > div > div:nth-child(1) > div');
-
-// Configurar o segundo carrossel
-setupCarrossel('prevBtn2', 'nextBtn2', '#filmes > div > div:nth-child(2) > div');
+manipularCarrosel('prevBtn1', 'nextBtn1', '#filmes > div > div:nth-child(1) > div');
+manipularCarrosel('prevBtn2', 'nextBtn2', '#filmes > div > div:nth-child(2) > div');
