@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <form>
         <div class="containerTudo">
             <div class="containerLogin">
@@ -19,25 +18,18 @@
                 <div class="inputsUsuario">
                     <label for="emailUsuario">Digite seu email</label>
                     <input type="text" id="emailUsuario" placeholder="E-mail">
-                    <br>
                     <label for="senhaUsuario">Digite sua senha</label>
                     <input type="password" id="senhaUsuario" placeholder="Senha">
-                    <br>
                 </div>
-
                 <div class="botaoLogar">
                     <button type="button" onclick="validaForm()">Logar</button>
                     <a href="cadastro.html"><button type="button">Cadastrar</button></a>
-
                 </div>
                 <div class="resultado">
                     <h1 id="resultadoLogin"></h1>
                 </div>
             </div>
         </div>
-
-
-
     </form>
 
     <form>
@@ -47,26 +39,17 @@
                     <h1>Registrar</h1>
                 </div>
                 <div class="inputsUsuario">
-                    <label for="email">Digite seu email</label>
-                    <input type="text" name="email" id="CadEmailUsuario" placeholder="Email cadastrar">
-                    <br>
-                    <label for="senha">Digite seu senha</label>
-                    <input type="password" name="senha" id="cadSenhaUsuario" placeholder="Senha de acesso">
-                    <br>
+                    <label for="CadEmailUsuario">Digite seu email</label>
+                    <input type="text" id="CadEmailUsuario" placeholder="Email cadastrar">
+                    <label for="cadSenhaUsuario">Digite sua senha</label>
+                    <input type="password" id="cadSenhaUsuario" placeholder="Senha de acesso">
                 </div>
-
                 <div class="botoesCadastro">
-                    <br>
-                    <button type="button" id="cadBotao" onclick="cadastraUsuario()">Enviar</button>
-                    <p>Já possui cadastro ? <a href="index.html">Faça login</a></p>
-
+                    <button type="button" onclick="cadastraUsuario()">Enviar</button>
+                    <p>Já possui cadastro? <a href="index.html">Faça login</a></p>
                 </div>
             </div>
         </div>
-
-
-
-
     </form>
     <script src="script.js"></script>
 </body>
