@@ -1,0 +1,100 @@
+$cor_principal: #f00;
+$cor_secundaria: #0f0;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+  color: $cor_principal;
+}
+
+li {
+  color: $cor_secundaria;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+header{
+    background-color: rgb(51, 56, 51);
+    color: $cor_secundaria;
+    top:0;
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    gap: 2em;
+}
+
+.conteudoHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+header a{
+    text-decoration: none;
+    color: #fff;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    font-family: sans-serif;
+}
+
+.artigos {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+article {
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    overflow: auto;
+    max-height: 300px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+article h2{
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin: 0px 5px 10px 0px;
+    font-family: monospace;
+}
+
+article p {
+    font-size: clamp(1rem, 0.89vw, 1.5rem);
+    line-height: 1.5;
+    font-weight: bold;
+    font-family: sans-serif;
+    max-width: 500px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 0 auto; /* Centraliza o parágrafo no meio da página */
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
