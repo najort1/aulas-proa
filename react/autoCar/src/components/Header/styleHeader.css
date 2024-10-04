@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    width: 100vw;
+    z-index: 1000;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.tituloPagina h1 {
+    font-size: 3em;
+    color: #ff0000;
+    font-weight: bolder;
+
+}   
+
+header a:hover{
+    color: #f00;
+}

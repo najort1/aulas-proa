@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "marca": "VOLKSWAGEN",
+      "modelo": "Uno",
+      "ano": "1990",
+      "preco": "45000",
+      "imagem": "https://i.pinimg.com/564x/f3/6b/fa/f36bfa3b60559e7da0014f91250abf66.jpg"
+    },
+    {
+      "id": 2,
+      "marca": "YAMAHA",
+      "modelo": "MARCOPOLO 2013",
+      "ano": "2013",
+      "preco": "14555",
+      "imagem": "https://i.pinimg.com/564x/f3/6b/fa/f36bfa3b60559e7da0014f91250abf66.jpg"
+    }
+  ]
+}
