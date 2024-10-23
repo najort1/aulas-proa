@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Principal from './components/ConteudoPrincipal/principal';
 import ListaDeVeiculos from './components/ListaDeVeiculos/ListaDeVeiculos';
 import { useState, useEffect } from 'react';
+import LoginPage from './components/paginaLogin/Login';
 
 function App() {
   const [veiculos, setVeiculos] = useState([]);
