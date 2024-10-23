@@ -4,7 +4,10 @@ import ConfirmarDeletar from "../confirmaDeleta/ConfirmarDeletar";
 import ModalEditarInfos from "../modalEditarInformacoes/modalEditorInformacoes";
 import ModalAdicionarVeiculos from "../modalAdicionarVeiculo/ModalAdicionarVeiculo";
 
-const ListaDeVeiculos = ({ veiculos, handleDelete, handleEdit, handleCreate }) => {
+import axios from 'axios';
+
+
+const ListaDeVeiculos = ({ veiculos, handleDelete, handleEdit, handleCreate, setVeiculos,veiculosAntigos }) => {
   const [modalState, setModalState] = useState({
     showModal: false,
     isEditModal: false,
@@ -54,13 +57,32 @@ const ListaDeVeiculos = ({ veiculos, handleDelete, handleEdit, handleCreate }) =
     });
   };
 
+  const handlePesquisa = async (marca) => {
+  
+    try {
+      const response = await axios.get(`http://localhost:8080/api/produto/listar/${marca.target.value}`);
+      const respostaJson = JSON.parse(response.request.response);
+      const respostaText = response.request.response
+
+
+      if(respostaText.includes("Not Found") || respostaText === "[]" || response.status === 404 || marca.target.value === ""){
+        return setVeiculos(veiculosAntigos);
+      }
+      
+      setVeiculos(respostaJson);
+    } catch {
+      return setVeiculos(veiculosAntigos);
+    }
+
+  }
+
   return (
     <>
       <div className="opcoes">
         <button className="botaoAdicionar" onClick={handleCreateClick}>
           Adicionar Veículo
         </button>
-        <input className="inputPesquisaLista" type="text" placeholder="Pesquisar por marca" />
+        <input onChange={handlePesquisa} className="inputPesquisaLista" type="text" placeholder="Pesquisar por marca" />
       </div>
 
       <div className="listaVeiculos">

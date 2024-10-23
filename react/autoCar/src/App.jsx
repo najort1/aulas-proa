@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [veiculos, setVeiculos] = useState([]);
-  const apiUrl = 'http://localhost:3000/products';
+  const [veiculosAntigos, setVeiculosAntigos] = useState([]);
+  const apiUrl = 'http://localhost:8080/api/produto/listar';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,7 @@ function App() {
         }
         const data = await response.json();
         setVeiculos(data);
+        setVeiculosAntigos(data);
       } catch (error) {
         console.error(error);
       }
@@ -26,8 +28,9 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`${apiUrl}/${id}`, { method: 'DELETE' });
+      await fetch(`http://localhost:8080/api/produto/deletar/${id}`, { method: 'DELETE' });
       setVeiculos((prevVeiculos) => prevVeiculos.filter((veiculo) => veiculo.id !== id));
+      setVeiculosAntigos((prevVeiculos) => prevVeiculos.filter((veiculo) => veiculo.id !== id));
     } catch (error) {
       console.error('Erro ao deletar o veículo:', error);
     }
@@ -35,12 +38,15 @@ function App() {
 
   const handleEdit = async (id, veiculo) => {
     try {
-      await fetch(`${apiUrl}/${id}`, {
+      await fetch(`http://localhost:8080/api/produto/atualizar/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(veiculo),
       });
       setVeiculos((prevVeiculos) =>
+        prevVeiculos.map((v) => (v.id === id ? { ...v, ...veiculo } : v))
+      );
+      setVeiculosAntigos((prevVeiculos) =>
         prevVeiculos.map((v) => (v.id === id ? { ...v, ...veiculo } : v))
       );
     } catch (error) {
@@ -59,13 +65,14 @@ function App() {
         veiculo.imagem = "https://i.pinimg.com/564x/f3/6b/fa/f36bfa3b60559e7da0014f91250abf66.jpg";
       }
 
-      const response = await fetch(apiUrl, {
+      const response = await fetch(`http://localhost:8080/api/produto/registrar`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(veiculo),
       });
       const data = await response.json();
       setVeiculos((prevVeiculos) => [...prevVeiculos, data]);
+      setVeiculosAntigos((prevVeiculos) => [...prevVeiculos, data]);
     } catch (error) {
       console.error('Erro ao criar o veículo:', error);
     }
@@ -80,6 +87,8 @@ function App() {
         handleDelete={handleDelete}
         handleEdit={handleEdit}
         handleCreate={handleCreate}
+        setVeiculos={setVeiculos}
+        veiculosAntigos={veiculosAntigos}
       />
     </>
   );
