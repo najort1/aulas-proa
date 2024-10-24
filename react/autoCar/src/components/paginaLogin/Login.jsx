@@ -1,7 +1,23 @@
 import './styles.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import ModalLoginError from '../modalLoginError/ModalLoginError';
 
 const LoginPage = () => {
+
+    const navigate = useNavigate();
+
+    const navegaProPainel = () => {
+        navigate('/painel');
+    }
+
+    const navegaProCadastro = () => {
+        navigate('/cadastro');
+    }
+    
+    const [mensagemErro, setMensagemErro] = useState('');
+    const [mostrarModal, setMostrarModal] = useState(false);
 
     const handleLogin = async () => {
         const email = document.getElementById('email').value;
@@ -20,24 +36,31 @@ const LoginPage = () => {
                 if(localStorage.getItem('token')) {
                     localStorage.removeItem('token');
                 }
-            }else if(response.status === 200){
+            } else if(response.status === 200) {
                 const bearer = respostaJson.token;
                 localStorage.setItem('token', bearer);
+                navegaProPainel();
             }
 
         } catch (error) {
             if (error.response && error.response.data && error.response.data.detail) {
-                document.querySelector('.respostaApi').innerText = error.response.data.detail;
+                setMensagemErro(error.response.data.detail);
+                setMostrarModal(true);
             } else {
-                document.querySelector('.respostaApi').innerText = 'Erro ao fazer login.';
+                setMensagemErro('Erro ao fazer login');
+                setMostrarModal(true);
             }
             console.error('Erro ao fazer login:', error);
         }
     }
 
     return (
-        <div>
+        <div className='paiDoLogin'>
             <div className="container">
+                <div className="titulo">
+                    <h1>Login</h1>
+                </div>
+
                 <div className="containerInputs">
                     <div className="containerInput">
                         <label htmlFor="email">Email:</label>
@@ -50,11 +73,13 @@ const LoginPage = () => {
                 </div>
                 <div className="containerButtons">
                     <button className="botaoLogin" onClick={handleLogin}>Login</button>
-                    <button className="botaoCadastrar">Cadastrar</button>
+                    <button className="botaoCadastrar" onClick={navegaProCadastro}>Cadastrar</button>
                 </div>
-
-                <p className="respostaApi"></p>
             </div>
+            {mostrarModal && <ModalLoginError 
+            mensagem={mensagemErro}
+            setFecharModal={setMostrarModal}
+             />}
         </div>
     );
 };

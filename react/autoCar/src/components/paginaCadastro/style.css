@@ -1,4 +1,4 @@
-.paiDoLogin{
+.paiDoCadastro{
     width: 100dvw;
     height: 100dvh;
     display: flex;
@@ -8,7 +8,7 @@
 }
 
 .container{
-    width: 30em;
+    width: 400px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -37,27 +37,4 @@ button{
     color: red;
     text-align: center;
     margin: 10px 0;
-}
-
-.titulo{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.containerButtons {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.mensagemErro{
-    position: fixed;
-    bottom : 0;
-    color: red;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    
 }
