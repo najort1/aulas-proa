@@ -4,6 +4,8 @@ import Receita.Receitas;
 import Curso.Senac;
 import Calculadora.Sequencial;
 import Curso.Estudante;
+import Calculadora.Calculos;
+import Compras.ListaDeCompras;
 
 import java.util.List;
 
@@ -40,14 +42,25 @@ public class Main {
 //        dev_java.quantidadeAlunos();
 //        dev_java.removerAluno("José");
 
-        Sequencial sequencial = new Sequencial(List.of(1.0,2.0,3.0,4.0,5.0));
+//        Sequencial sequencial = new Sequencial(List.of(1.0,2.0,3.0,4.0,5.0));
+//
+//        sequencial.somarTodos();
+//        sequencial.multiplicarTodos();
+//
+//        Estudante aluno = new Estudante("João", List.of(10,9,8));
+//        aluno.adicionarNota(7);
+//        aluno.calcularMedia();
+//
+//        Calculos calculos = new Calculos();
+//        calculos.contagemRegressiva(10);
+//        calculos.tabuada(5);
+//        System.out.println(calculos.somaAte(10));
+//        System.out.println(calculos.contarPares(10));
 
-        sequencial.somarTodos();
-        sequencial.multiplicarTodos();
 
-        Estudante aluno = new Estudante("João", List.of(10,9,8));
-        aluno.adicionarNota(7);
-        aluno.calcularMedia();
+
+        ListaDeCompras lista = new ListaDeCompras();
+        lista.menu();
 
 
     }
